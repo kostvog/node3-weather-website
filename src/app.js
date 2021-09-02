@@ -39,16 +39,18 @@ app.get('/about',(req, res)=>{
 })
 
 const rndab = (min, max) => {
-    return Math.random() * (max - min) + min;
+    return Math.floor(Math.random() * (max - min) + min);
   }
 
 app.get('/help',(req, res)=>{
     res.render('help',{
         name: 'Kostas Vogiatzis',
         num: rndab(5,35),
-        title: 'Help'
+        title: 'Help',
+        crap: 'Sea'
     })
 })
+        
 
 app.get('/weather',(req, res)=>{
     if (!req.query.address){
