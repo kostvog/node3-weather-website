@@ -14,7 +14,7 @@ weatherform.addEventListener('submit', (ev) =>{
     message1.textContent = 'Loading...'
     fetch('http://puzzle.mead.io/puzzle').then((response) => {
         response.json().then((crap) =>{
-        message3.textContent = crap
+        message3.textContent = crap.puzzle
         })
     })
     const location = search.value
