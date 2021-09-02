@@ -4,10 +4,10 @@ const forecast = require('../utils/forecast.js')
 const path = require('path')
 const express = require('express')
 const hbs = require('hbs')
-const { title } = require('process')
+const process = require('process')
 
 const app = express()
-const port = proccess.env.PORT || 3000
+const port = process.env.PORT || 3000
 
 // paths for express config
 const publicdirPath = path.join(__dirname, '../public')
