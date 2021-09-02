@@ -38,10 +38,14 @@ app.get('/about',(req, res)=>{
     })
 })
 
+const rndab = (min, max) => {
+    return Math.random() * (max - min) + min;
+  }
+
 app.get('/help',(req, res)=>{
     res.render('help',{
         name: 'Kostas Vogiatzis',
-        num: 53,
+        num: rndab(5,35),
         title: 'Help'
     })
 })

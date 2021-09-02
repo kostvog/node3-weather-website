@@ -9,23 +9,21 @@ const search = document.querySelector('input')
 const message1 = document.querySelector('#message-1')
 const message2 = document.querySelector('#message-2')
 
-message1.textContent = 'Loading...'
+message1.textContent = ''
 message2.textContent = ''
 
 weatherform.addEventListener('submit', (ev) =>{
     ev.preventDefault()
-  
-const location = search.value
-   fetch('/weather?address='+ location).then((response) =>{
+    message1.textContent = 'Loading...'
+    const location = search.value
+    fetch('/weather?address='+ location).then((response) =>{
     response.json().then((data)=>{
         if (data.error){
-            //console.log(data.error)
-            message2.textContent = data.error
+            message1.textContent = data.error
+            message2.textContent = ''
         } else {
-                // console.log(data.location)
-                // console.log(data.forecast)
-                message1.textContent = data.location
-                message2.textContent = data.forecast
+            message1.textContent = data.location
+            message2.textContent = data.forecast
         }
     })
 })
