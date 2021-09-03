@@ -12,11 +12,12 @@ message3.textContent = ''
 weatherform.addEventListener('submit', (ev) =>{
     ev.preventDefault()
     message1.textContent = 'Loading...'
-    fetch('http://puzzle.mead.io/puzzle').then((response) => {
-        response.json().then((crap) =>{
-        message3.textContent = crap.puzzle
-        })
-    })
+    // http not secure so it doesnt work on heroku
+    // fetch('http://puzzle.mead.io/puzzle').then((response) => {
+    //     response.json().then((crap) =>{
+    //     message3.textContent = crap.puzzle
+    //     })
+    // })
     const location = search.value
     fetch('/weather?address='+ location).then((response) =>{
     response.json().then((data)=>{
