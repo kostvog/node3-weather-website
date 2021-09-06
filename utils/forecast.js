@@ -16,7 +16,11 @@ const url = 'http://api.weatherstack.com/current?access_key=11cb1dad0f48e6d73d0b
       //    ws: body.current.wind_speed,
       //    wd: body.current.wind_dir
       // }
-       callback(undefined, msg)
+          const f={
+             msg,
+             icon: body.current.weather_icons[0]
+          }
+       callback(undefined, f)
    }
 })
 }
